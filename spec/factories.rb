@@ -7,7 +7,7 @@
 # http://railscasts.com/episodes/158-factories-not-fixtures
 
 def r_str
-  ActiveSupport::SecureRandom.hex(3)
+  SecureRandom.hex(3)
 end
 
 Factory.define :profile do |p|
@@ -99,7 +99,7 @@ Factory.define(:status_message_with_photo, :parent => :status_message) do |m|
 end
 
 Factory.define(:photo) do |p|
-  p.sequence(:random_string) {|n| ActiveSupport::SecureRandom.hex(10) }
+  p.sequence(:random_string) {|n| SecureRandom.hex(10) }
   p.association :author, :factory => :person
   p.after_build do |p|
     p.unprocessed_image.store! File.open(File.join(File.dirname(__FILE__), 'fixtures', 'button.png'))

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.11'
+gem 'rails', '3.1.3'
 
 gem 'bundler', '>= 1.0.0'
 gem 'foreman', '0.34.1'
@@ -10,8 +10,8 @@ gem 'thin', '~> 1.3.1', :require => false
 
 # authentication
 
-gem 'devise', '~> 1.3.1'
-gem 'devise_invitable', '0.5.0'
+gem 'devise', '1.5.3'
+gem 'devise_invitable', '0.6.1'
 gem 'jwt'
 gem 'oauth2-provider', '0.0.19'
 
@@ -44,9 +44,9 @@ end
 gem 'settingslogic', :git => 'git://github.com/binarylogic/settingslogic.git'
 # database
 
-gem 'activerecord-import'
+gem "activerecord-import", "~> 0.2.9"
 gem 'foreigner', '~> 1.1.0'
-gem 'mysql2', '0.2.18' if ENV['DB'].nil? || ENV['DB'] == 'all' || ENV['DB'] == 'mysql'
+gem 'mysql2', '0.3.11' if ENV['DB'].nil? || ENV['DB'] == 'all' || ENV['DB'] == 'mysql'
 gem 'pg' if ENV['DB'] == 'all' || ENV['DB'] == 'postgres'
 gem 'sqlite3' if ENV['DB'] == 'all' || ENV['DB'] == 'sqlite'
 
